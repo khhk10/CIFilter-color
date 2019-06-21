@@ -1,7 +1,6 @@
 # CoreImage-intro
 Introduction to image processing using Core Image
 
-example:
 - CIFilter - CIColorClamp
 
 <img src="https://github.com/khhk10/CoreImage-intro/blob/master/images/coreimage-intro.png" width="250">
