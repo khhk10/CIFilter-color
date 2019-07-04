@@ -30,16 +30,24 @@ class ViewController: UIViewController {
         // クランプフィルタ
         // let clampImage = clampFilter(origiImage, inputMin: CIVector(x: 0, y: 0, z: 0, w: 0), inputMax: CIVector(x: 1.0, y: 1.0, z: 0.3, w: 0.8))
         
+        let sharpImage = sharpenFilter(origiImage, sharpness: 0.5)
+        
         // 処理後の画像
-        self.afterImage.image = UIImage(ciImage: origiImage!)
+        self.afterImage.image = UIImage(ciImage: sharpImage!)
     }
     
     // スライダー
     @IBAction func changeSlider(_ sender: UISlider) {
         DispatchQueue.main.async {
+            /*
             // コントラスト
             let contrastImage = self.colorControls(self.origiImage, intensity: Double(sender.value), type: .contrast)
-            self.afterImage.image = UIImage(ciImage: contrastImage!)
+            self.beforeImage.image = UIImage(ciImage: contrastImage!)
+            */
+            
+            // シャープ
+            let sharpImage = self.sharpenFilter(self.origiImage, sharpness: Double(sender.value))
+            self.afterImage.image = UIImage(ciImage: sharpImage!)
         }
     }
 }

@@ -41,4 +41,13 @@ extension ViewController {
         
         return clampFilter?.outputImage
     }
+    
+    // シャープ
+    func sharpenFilter(_ input: CIImage, sharpness: Double) -> CIImage? {
+        let sharpen = CIFilter(name: "CISharpenLuminance")
+        sharpen?.setValue(input, forKey: kCIInputImageKey)
+        sharpen?.setValue(sharpness, forKey: kCIInputSharpnessKey)
+        
+        return sharpen?.outputImage
+    }
 }
