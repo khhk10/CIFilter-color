@@ -1,5 +1,5 @@
 # CoreImage-intro
-Introduction to image processing using Core Image
+Introduction to image processing with Core Image
 
 ### CIFilter
 CICategoryColorAdjustment
@@ -12,6 +12,8 @@ CICategoryColorEffect
 CICategorySharpen
 - CISharpenLuminance
 - CIUnsharpMask
+
+___
 
 __Example (CIColorClamp)__
 
