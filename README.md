@@ -13,7 +13,7 @@ CICategorySharpen
 - CISharpenLuminance
 - CIUnsharpMask
 
-__Sample Code (CIColorClamp)__
+__Example (CIColorClamp)__
 
 _Filter.swift_
 ```
