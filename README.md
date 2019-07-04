@@ -2,9 +2,15 @@
 Introduction to image processing using Core Image
 
 ### CIFilter
+CICategoryColorAdjustment
 - CIColorControls (brightness / contrast / saturation)
 - CIColorClamp
+
+CICategoryColorEffect
 - CISepiaTone
+
+CICategorySharpen
+- CISharpenLuminance
 
 <img src="https://github.com/khhk10/CoreImage-intro/blob/master/images/coreimage-intro.png" width="250">
 
