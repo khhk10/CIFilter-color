@@ -13,7 +13,7 @@ CICategorySharpen
 - CISharpenLuminance
 - CIUnsharpMask
 
-ex) CIColorClamp
+__Sample Code (CIColorClamp)__
 
 _Filter.swift_
 ```
@@ -22,7 +22,6 @@ func clampFilter(_ input: CIImage, inputMin: CIVector, inputMax: CIVector) -> CI
         clampFilter?.setValue(input, forKey: kCIInputImageKey)
         clampFilter?.setValue(inputMin, forKey: "inputMinComponents")
         clampFilter?.setValue(inputMax, forKey: "inputMaxComponents")
-        
         return clampFilter?.outputImage
 }
 ```
@@ -33,6 +32,8 @@ let max = CIVector(x: 1.0, y: 1.0, z: 0.3, w: 0.8)
 let clampImage = clampFilter(origiImage, inputMin: min, inputMax: max)
 self.imageView.image = UIImage(ciImage: clampImage!)
 ```
+
+__Result__
 
 <img src="https://github.com/khhk10/CoreImage-intro/blob/master/images/coreimage-intro.png" width="250">
 
