@@ -30,10 +30,12 @@ class ViewController: UIViewController {
         // クランプフィルタ
         // let clampImage = clampFilter(origiImage, inputMin: CIVector(x: 0, y: 0, z: 0, w: 0), inputMax: CIVector(x: 1.0, y: 1.0, z: 0.3, w: 0.8))
         
-        let sharpImage = sharpenFilter(origiImage, sharpness: 0.5)
+        // シャープ
+        // let sharpImage = sharpenFilter(origiImage, sharpness: 0.5)
+        let unsharpMaskImage = unsharpMaskFilter(origiImage, radius: 2.5, intensity: 0.5)
         
         // 処理後の画像
-        self.afterImage.image = UIImage(ciImage: sharpImage!)
+        self.afterImage.image = UIImage(ciImage: unsharpMaskImage!)
     }
     
     // スライダー
@@ -46,8 +48,8 @@ class ViewController: UIViewController {
             */
             
             // シャープ
-            let sharpImage = self.sharpenFilter(self.origiImage, sharpness: Double(sender.value))
-            self.afterImage.image = UIImage(ciImage: sharpImage!)
+            let unsharpMask = self.sharpenFilter(self.origiImage, sharpness: Double(sender.value))
+            self.afterImage.image = UIImage(ciImage: unsharpMask!)
         }
     }
 }

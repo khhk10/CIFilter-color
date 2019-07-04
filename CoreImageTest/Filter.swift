@@ -50,4 +50,13 @@ extension ViewController {
         
         return sharpen?.outputImage
     }
+    
+    func unsharpMaskFilter(_ input: CIImage, radius: Double, intensity: Double) -> CIImage? {
+        let unsharpMask = CIFilter(name: "CIUnsharpMask")
+        unsharpMask?.setValue(input, forKey: kCIInputImageKey)
+        unsharpMask?.setValue(radius, forKey: kCIInputRadiusKey)
+        unsharpMask?.setValue(intensity, forKey: kCIInputIntensityKey)
+
+        return unsharpMask?.outputImage
+    }
 }
