@@ -8,7 +8,7 @@ CICategoryColorAdjustment
 
 CICategoryColorEffect
 - CISepiaTone
-- CICOlorPosterize
+- CIColorPosterize
 
 CICategorySharpen
 - CISharpenLuminance
