@@ -32,7 +32,7 @@ _ViewController.swift_
 ```
 let min = CIVector(x: 0, y: 0, z: 0, w: 0)
 let max = CIVector(x: 1.0, y: 1.0, z: 0.3, w: 0.8)
-let clampImage = clampFilter(origiImage, inputMin: min, inputMax: max)
+let clampImage = clampFilter(uiImage, inputMin: min, inputMax: max)
 self.imageView.image = UIImage(ciImage: clampImage!)
 ```
 
