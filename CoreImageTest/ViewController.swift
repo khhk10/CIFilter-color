@@ -32,10 +32,13 @@ class ViewController: UIViewController {
         
         // シャープ
         // let sharpImage = sharpenFilter(origiImage, sharpness: 0.5)
-        let unsharpMaskImage = unsharpMaskFilter(origiImage, radius: 2.5, intensity: 0.5)
+        // let unsharpMaskImage = unsharpMaskFilter(origiImage, radius: 2.5, intensity: 0.5)
+        
+        // ポスタライズ
+        let posterize = posterizeFilter(origiImage, inputLevels: 6.0)
         
         // 処理後の画像
-        self.afterImage.image = UIImage(ciImage: unsharpMaskImage!)
+        self.afterImage.image = UIImage(ciImage: posterize!)
     }
     
     // スライダー
@@ -48,8 +51,8 @@ class ViewController: UIViewController {
             */
             
             // シャープ
-            let unsharpMask = self.sharpenFilter(self.origiImage, sharpness: Double(sender.value))
-            self.afterImage.image = UIImage(ciImage: unsharpMask!)
+            // let unsharpMask = self.sharpenFilter(self.origiImage, sharpness: Double(sender.value))
+            // self.afterImage.image = UIImage(ciImage: unsharpMask!)
         }
     }
 }

@@ -42,6 +42,14 @@ extension ViewController {
         return clampFilter?.outputImage
     }
     
+    func posterizeFilter(_ input: CIImage, inputLevels: Double) -> CIImage? {
+        let posterize = CIFilter(name: "CIColorPosterize")
+        posterize?.setValue(input, forKey: kCIInputImageKey)
+        posterize?.setValue(inputLevels, forKey: "inputLevels")
+        
+        return posterize?.outputImage
+    }
+    
     // シャープ
     func sharpenFilter(_ input: CIImage, sharpness: Double) -> CIImage? {
         let sharpen = CIFilter(name: "CISharpenLuminance")
