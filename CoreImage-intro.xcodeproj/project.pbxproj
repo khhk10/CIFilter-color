@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		551E205722CB6B430027B58C /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551E205622CB6B430027B58C /* Filter.swift */; };
+		551E206322D072EC0027B58C /* grayscale.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 551E206222D072EC0027B58C /* grayscale.jpg */; };
 		55409B5A22BB70E300D4ED3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55409B5922BB70E300D4ED3C /* AppDelegate.swift */; };
 		55409B5C22BB70E300D4ED3C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55409B5B22BB70E300D4ED3C /* ViewController.swift */; };
 		55409B5F22BB70E300D4ED3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55409B5D22BB70E300D4ED3C /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		551E205622CB6B430027B58C /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		551E206222D072EC0027B58C /* grayscale.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grayscale.jpg; sourceTree = "<group>"; };
 		55409B5622BB70E300D4ED3C /* CoreImage-intro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoreImage-intro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55409B5922BB70E300D4ED3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55409B5B22BB70E300D4ED3C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				55409B5D22BB70E300D4ED3C /* Main.storyboard */,
 				55409B6B22BB768200D4ED3C /* photo1.jpg */,
 				55409B6D22BB89BA00D4ED3C /* photo4.jpg */,
+				551E206222D072EC0027B58C /* grayscale.jpg */,
 				55409B6022BB70E400D4ED3C /* Assets.xcassets */,
 				55409B6222BB70E400D4ED3C /* LaunchScreen.storyboard */,
 				55409B6522BB70E400D4ED3C /* Info.plist */,
@@ -136,6 +139,7 @@
 				55409B6422BB70E400D4ED3C /* LaunchScreen.storyboard in Resources */,
 				55409B6122BB70E400D4ED3C /* Assets.xcassets in Resources */,
 				55409B5F22BB70E300D4ED3C /* Main.storyboard in Resources */,
+				551E206322D072EC0027B58C /* grayscale.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,16 +7,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var beforeImage: UIImageView!
     @IBOutlet weak var afterImage: UIImageView!
     var origiImage: CIImage!
+    
+    let filter = Filter()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.backgroundColor = UIColor.lightGray
         
         let context = CIContext()
         
         // let url = URL(fileURLWithPath: "\(Bundle.main.bundlePath)/Assets.xcassets/photo1.jpg")
         
         // 処理前の画像
-        guard let filePath = Bundle.main.path(forResource: "photo4", ofType: "jpg") else {
+        guard let filePath = Bundle.main.path(forResource: "grayscale", ofType: "jpg") else {
             // ファイルが存在しなかった
             return
         }
@@ -35,10 +39,16 @@ class ViewController: UIViewController {
         // let unsharpMaskImage = unsharpMaskFilter(origiImage, radius: 2.5, intensity: 0.5)
         
         // ポスタライズ
-        let posterize = posterizeFilter(origiImage, inputLevels: 6.0)
+        // let posterize = filter.posterizeFilter(origiImage, inputLevels: 6.0)
+        
+        // ネガポジ反転
+        // let invertImage = filter.invertFilter(origiImage)
+        
+        // マスクされた白だけの画像
+        let maskToAlpha = filter.maskToAlphaFilter(origiImage)
         
         // 処理後の画像
-        self.afterImage.image = UIImage(ciImage: posterize!)
+        self.afterImage.image = UIImage(ciImage: maskToAlpha!)
     }
     
     // スライダー

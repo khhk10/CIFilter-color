@@ -1,6 +1,6 @@
 import UIKit
 
-extension ViewController {
+class Filter {
     // 明度/コントラスト/彩度
     func colorControls(_ input: CIImage, intensity: Double, type: ColorControl) -> CIImage? {
         let filter = CIFilter(name: "CIColorControls")
@@ -42,6 +42,7 @@ extension ViewController {
         return clampFilter?.outputImage
     }
     
+    // ポスタリゼーション
     func posterizeFilter(_ input: CIImage, inputLevels: Double) -> CIImage? {
         let posterize = CIFilter(name: "CIColorPosterize")
         posterize?.setValue(input, forKey: kCIInputImageKey)
@@ -66,5 +67,21 @@ extension ViewController {
         unsharpMask?.setValue(intensity, forKey: kCIInputIntensityKey)
 
         return unsharpMask?.outputImage
+    }
+    
+    // ネガポジ反転
+    func invertFilter(_ input: CIImage) -> CIImage? {
+        let invert = CIFilter(name: "CIColorInvert")
+        invert?.setValue(input, forKey: kCIInputImageKey)
+        
+        return invert?.outputImage
+    }
+    
+    // アルファでマスクされた白だけの画像
+    func maskToAlphaFilter(_ input: CIImage) -> CIImage? {
+        let mask = CIFilter(name: "CIMaskToAlpha")
+        mask?.setValue(input, forKey: kCIInputImageKey)
+        
+        return mask?.outputImage
     }
 }
