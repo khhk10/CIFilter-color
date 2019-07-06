@@ -40,7 +40,7 @@ let clampImage = filter.clampFilter(uiImage, inputMin: min, inputMax: max)
 self.imageView.image = UIImage(ciImage: clampImage!)
 ```
 
-__Result__
+Result
 
 <img src="https://github.com/khhk10/CoreImage-intro/blob/master/images/clamp_before.png" height="170"> <img src="https://github.com/khhk10/CoreImage-intro/blob/master/images/clamp_after.png" height="170">
 
@@ -49,6 +49,8 @@ __Example (CIMaskToAlpha)__
 ```
 let maskedImage = filter.maskToAlphaFilter(uiImage)
 ```
+
+Result
 
 <img src="https://github.com/khhk10/CoreImage-intro/blob/master/images/maskToAlpha_before.png" height="170"> <img src="https://github.com/khhk10/CoreImage-intro/blob/master/images/maskToAlpha_after.png" height="170">
 
