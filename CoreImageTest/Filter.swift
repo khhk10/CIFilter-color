@@ -84,4 +84,42 @@ class Filter {
         
         return mask?.outputImage
     }
+    
+    func minimumComponent(_ input: CIImage) -> CIImage? {
+        let minimum = CIFilter(name: "CIMinimumComponent")
+        minimum?.setValue(input, forKey: kCIInputImageKey)
+        
+        return minimum?.outputImage
+    }
+    
+    func maximumComponent(_ input: CIImage) -> CIImage? {
+        let maximum = CIFilter(name: "CIMaximumComponent")
+        maximum?.setValue(input, forKey: kCIInputImageKey)
+        
+        return maximum?.outputImage
+    }
+    
+    // グレースケール（低いコントラスト）
+    func photoEffectMono(_ input: CIImage) -> CIImage? {
+        let mono = CIFilter(name: "CIPhotoEffectMono")
+        mono?.setValue(input, forKey: kCIInputImageKey)
+        
+        return mono?.outputImage
+    }
+    
+    // グレースケール（誇張したコントラスト）
+    func photoEffectNoir(_ input: CIImage) -> CIImage? {
+        let noir = CIFilter(name: "CIPhotoEffectNoir")
+        noir?.setValue(noir, forKey: kCIInputImageKey)
+        
+        return noir?.outputImage
+    }
+    
+    // グレースケール（コントラストを大幅に変更しない）
+    func photoEffectTonal(_ input: CIImage) -> CIImage? {
+        let tonal = CIFilter(name: "CIPhotoEffectTonal")
+        tonal?.setValue(tonal, forKey: kCIInputImageKey)
+        
+        return tonal?.outputImage
+    }
 }
