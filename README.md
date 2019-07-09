@@ -65,8 +65,6 @@ Result
 
 <img src="https://github.com/khhk10/CoreImage-intro/blob/master/images/maskToAlpha_before.png" height="170"> <img src="https://github.com/khhk10/CoreImage-intro/blob/master/images/maskToAlpha_after.png" height="170">
 
-___
-
 ## 2. Call CIImage instance method
 
 [applyingFilter(\_:parameters:)](https://developer.apple.com/documentation/coreimage/ciimage/1437589-applyingfilter)
