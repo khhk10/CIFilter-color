@@ -36,7 +36,7 @@ _ViewController.swift_
 let filter = Filter()
 let min = CIVector(x: 0, y: 0, z: 0, w: 0)
 let max = CIVector(x: 1.0, y: 1.0, z: 0.3, w: 0.8)
-let clampImage = filter.clampFilter(uiImage, inputMin: min, inputMax: max)
+let clampImage = filter.clampFilter(originalImage, inputMin: min, inputMax: max)
 self.imageView.image = UIImage(ciImage: clampImage!)
 ```
 
@@ -57,7 +57,7 @@ func maskToAlphaFilter(_ input: CIImage) -> CIImage? {
 
 _ViewController.swift_
 ```
-let maskedImage = filter.maskToAlphaFilter(uiImage)
+let maskedImage = filter.maskToAlphaFilter(originalImage)
 self.imageView.image = UIImage(ciImage: maskToAlpha!)
 ```
 
@@ -74,13 +74,13 @@ Result
 ```
 let min = CIVector(x: 0, y: 0, z: 0, w: 0)
 let max = CIVector(x: 1.0, y: 1.0, z: 0.3, w: 0.8)
-let clampImage = origiImage.applyingFilter("CIColorClamp", parameters: ["inputMinComponents": min, "inputMaxComponents": max])
+let clampImage = originalImage.applyingFilter("CIColorClamp", parameters: ["inputMinComponents": min, "inputMaxComponents": max])
 ```
 
 ### CIMaskToAlpha
 
 ```
-let maskToAlpha = origiImage.applyingFilter("CIMaskToAlpha")
+let maskToAlpha = originalImage.applyingFilter("CIMaskToAlpha")
 ```
 
 ## reference
