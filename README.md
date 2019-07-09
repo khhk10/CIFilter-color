@@ -16,7 +16,7 @@ CICategorySharpen
 - CISharpenLuminance
 - CIUnsharpMask
 
-## 1. Implement the sequence of steps
+## 1. Implement method
 
 ### Example (CIColorClamp)
 
