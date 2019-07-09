@@ -49,11 +49,10 @@ Result
 _Filter.swift_
 ```
 func maskToAlphaFilter(_ input: CIImage) -> CIImage? {
-        let mask = CIFilter(name: "CIMaskToAlpha")
-        mask?.setValue(input, forKey: kCIInputImageKey)
-        
-        return mask?.outputImage
-    }
+    let mask = CIFilter(name: "CIMaskToAlpha")
+    mask?.setValue(input, forKey: kCIInputImageKey)
+    return mask?.outputImage
+}
 ```
 
 _ViewController.swift_
@@ -70,6 +69,8 @@ ___
 
 ## 2. Call CIImage instance method
 
+[applyingFilter(\_:parameters:)](https://developer.apple.com/documentation/coreimage/ciimage/1437589-applyingfilter)
+
 ### CIColorClamp
 
 ```
@@ -84,11 +85,10 @@ let clampImage = origiImage.applyingFilter("CIColorClamp", parameters: ["inputMi
 let maskToAlpha = origiImage.applyingFilter("CIMaskToAlpha")
 ```
 
-[applyingFilter(\_:parameters:)](https://developer.apple.com/documentation/coreimage/ciimage/1437589-applyingfilter)
-
 ## reference
 
 - [Core Image Filter Reference](https://developer.apple.com/library/archive/documentation/GraphicsImaging/Reference/CoreImageFilterReference/index.html#//apple_ref/doc/filter/ci/CIBloom)
+- [applyingFilter(\_:parameters:)](https://developer.apple.com/documentation/coreimage/ciimage/1437589-applyingfilter)
 
 ## License
 
