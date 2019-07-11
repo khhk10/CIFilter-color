@@ -1,7 +1,7 @@
-# CoreImage-intro
-Introduction to image processing with Core Image
+# CIFilter-color
+Introduction to use of color effects with CIFilter
 
-### CIFilter
+### CIFilter - color effects
 CICategoryColorAdjustment
 - CIColorControls (brightness / contrast / saturation)
 - CIColorClamp
@@ -11,6 +11,8 @@ CICategoryColorEffect
 - CIColorPosterize
 - CIColorInvert
 - CIMasktoAlpha
+- CIMinimumComponent (grayscale)
+- CIMaximumComponent (grayscale)
 
 CICategorySharpen
 - CISharpenLuminance
