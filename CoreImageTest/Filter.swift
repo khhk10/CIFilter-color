@@ -32,6 +32,16 @@ class Filter {
         return sepiaFilter?.outputImage
     }
     
+    // bloomフィルタ
+    func bloomFilter(_ input: CIImage, intensity: Double, radius: Double) -> CIImage? {
+        let bloomFilter = CIFilter(name: "CIBloom")
+        bloomFilter?.setValue(input, forKey: kCIInputImageKey)
+        bloomFilter?.setValue(intensity, forKey: kCIInputIntensityKey)
+        bloomFilter?.setValue(radius, forKey: kCIInputRadiusKey)
+        
+        return bloomFilter?.outputImage
+    }
+    
     // クランプフィルタ
     func clampFilter(_ input: CIImage, inputMin: CIVector, inputMax: CIVector) -> CIImage? {
         let clampFilter = CIFilter(name: "CIColorClamp")

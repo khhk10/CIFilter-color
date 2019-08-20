@@ -3,72 +3,38 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    
-    @IBOutlet weak var beforeImage: UIImageView!
-    @IBOutlet weak var afterImage: UIImageView!
-    var origiImage: CIImage!
-    
-    let filter = Filter()
+    @IBOutlet weak var beforeImage: UIImageView! // 処理前
+    @IBOutlet weak var afterImage: UIImageView! // 処理後
+    var origiImage: CIImage! // 元画像
+    let filter = Filter() // フィルタクラス
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.lightGray
-        
-        let context = CIContext()
-        
         // let url = URL(fileURLWithPath: "\(Bundle.main.bundlePath)/Assets.xcassets/photo1.jpg")
-        
-        // 処理前の画像
-        guard let filePath = Bundle.main.path(forResource: "photo1", ofType: "jpg") else {
-            // ファイルが存在しなかった
+        guard let filePath = Bundle.main.path(forResource: "ramen", ofType: "jpeg") else {
+            print("file path not found")
             return
         }
         let url = URL(fileURLWithPath: filePath)
         origiImage = CIImage(contentsOf: url)!
-        self.beforeImage.image = UIImage(ciImage: origiImage)
+        self.beforeImage.image = UIImage(ciImage: origiImage) // 処理前の画像
         
-        // セピアフィルタ
-        // let sepiaImage = filter.sepiaFilter(origiImage, intensity: 0.9)
-        
-        // クランプフィルタ
-        // let clampImage = filter.clampFilter(origiImage, inputMin: CIVector(x: 0, y: 0, z: 0, w: 0), inputMax: CIVector(x: 1.0, y: 1.0, z: 0.3, w: 0.8))
-        
-        // シャープ
-        // let sharpImage = filter.sharpenFilter(origiImage, sharpness: 0.5)
-        // let unsharpMaskImage = unsharpMaskFilter(origiImage, radius: 2.5, intensity: 0.5)
-        
-        // ポスタライズ
-        // let posterize = filter.posterizeFilter(origiImage, inputLevels: 6.0)
-        
-        // ネガポジ反転
-        // let invertImage = filter.invertFilter(origiImage)
-        
-        // マスクされた白だけの画像
-        // let maskToAlpha = filter.maskToAlphaFilter(origiImage)
-        
-        // グレースケール画像（最小値と最大値）
-        // let minGray = filter.minimumComponent(origiImage)
-        // let maxGray = filter.maximumComponent(origiImage)
-        
-        // グレースケール画像（白黒写真のような表現）
-        // let mono = filter.photoEffectMono(origiImage)
-        let noir = filter.photoEffectNoir(origiImage)
-        // let noir = origiImage.applyingFilter("CIPhotoEffectNoir", parameters: [:])
-        
-        // 処理後の画像
-        // self.beforeImage.image = UIImage(ciImage: noir!)
-        self.afterImage.image = UIImage(ciImage: noir!)
+        let bloom = filter.bloomFilter(origiImage, intensity: 1.9, radius: 5) // ブルーム加工
+        self.afterImage.image = UIImage(ciImage: bloom!) // 処理後の画像
     }
     
     // スライダー
     @IBAction func changeSlider(_ sender: UISlider) {
         DispatchQueue.main.async {
-            /*
+            
+            let bloom = self.filter.bloomFilter(self.origiImage, intensity: Double(sender.value)+0.5, radius: 5)
+            self.afterImage.image = UIImage(ciImage: bloom!)
+            
             // コントラスト
-            let contrastImage = self.colorControls(self.origiImage, intensity: Double(sender.value), type: .contrast)
-            self.beforeImage.image = UIImage(ciImage: contrastImage!)
-            */
+            // let contrastImage = self.colorControls(self.origiImage, intensity: Double(sender.value), type: .contrast)
+            // self.afterImage.image = UIImage(ciImage: contrastImage!)
             
             // シャープ
             // let unsharpMask = self.sharpenFilter(self.origiImage, sharpness: Double(sender.value))
